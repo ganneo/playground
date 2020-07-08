@@ -1,3 +1,8 @@
+:root {
+  --primary-color: rgb(190, 254, 255);
+  --secondary-color: rgb(0, 181, 181);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +11,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  background: url(./Img/blueBackground.jpg) no-repeat center center/cover;
 }
 
 a {
@@ -15,9 +21,9 @@ a {
 header {
   padding: 1rem;
   text-align: center;
-  background-color: blue;
-  color: white;
-  border-bottom: 5px skyblue solid;
+  background-color: var(--primary-color);
+  color: black;
+  border-bottom: 5px var(--secondary-color) solid;
 }
 
 .introduction-container {
@@ -31,15 +37,15 @@ header {
 
 .introduction-container a {
   padding: 2rem 3rem;
-  background-color: purple;
+  background-color: var(--secondary-color);
   border-radius: 30px;
-  transition: all 0.5s ease-in-out;
+  transition: all 1s ease-in-out;
   color: white;
 }
 
 .introduction-container a:hover {
-  border-radius: 10px;
-  box-shadow: 3px 3px 10px gray;
+  border-radius: 0;
+  box-shadow: 5px 5px 10px black;
 }
 
 .container {
@@ -50,17 +56,17 @@ header {
 }
 
 .container a {
-  background-color: rgb(91, 203, 91);
+  background-color: var(--secondary-color);
   padding: 3rem;
   text-align: center;
   border-radius: 10px;
-  transition: all 0.5s ease-in-out;
+  transition: all 1s ease-in-out;
+  color: white;
 }
 
 .container a:hover {
   border-radius: 0;
-  background-color: rgb(3, 199, 3);
-  box-shadow: 3px 3px 10px green;
+  box-shadow: 5px 5px 10px black;
 }
 
 .container .not-ready {
@@ -90,8 +96,8 @@ header {
 .about div,
 .about ol {
   padding: 1rem;
-  background-color: rgb(91, 203, 91);
-  color: white;
+  background-color: var(--primary-color);
+  color: black;
   margin: 1rem 0;
 }
 
@@ -112,7 +118,8 @@ header {
 }
 
 .contact form button {
-  background-color: rgb(46, 194, 46);
+  background-color: rgb(49, 135, 150);
+  color: white;
   border: none;
   font-size: larger;
   width: 50%;
@@ -123,5 +130,5 @@ header {
 .contact form button:hover {
   cursor: pointer;
   color: white;
-  background-color: green;
+  background-color: rgb(87, 99, 191);
 }
