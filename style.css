@@ -12,6 +12,8 @@
 body {
   font-family: "Roboto", sans-serif;
   background: url(./Img/blueBackground.jpg) no-repeat center center/cover;
+  min-height: 100vh;
+  height: fit-content;
 }
 
 a {
@@ -131,4 +133,61 @@ header {
   cursor: pointer;
   color: white;
   background-color: rgb(87, 99, 191);
+}
+/* iPad */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .not-ready {
+    padding: 3rem;
+  }
+}
+/* iPhone X */
+@media (max-width: 375px) {
+  .introduction-container {
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .introduction-container a {
+    padding: 1rem;
+  }
+  .container .not-ready:first-of-type {
+    padding: 1rem;
+  }
+  .container .not-ready {
+    font-size: small;
+    text-align: center;
+  }
+}
+
+/* iPhone 5/SE */
+@media (max-width: 320px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .container a {
+    font-size: 0.7rem;
+  }
+
+  .container .not-ready {
+    padding: 2rem;
+  }
+}
+
+/* galaxy S5 */
+@media (max-width: 360px) {
+  .container a {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container .not-ready {
+    padding: 1.5rem;
+  }
 }
