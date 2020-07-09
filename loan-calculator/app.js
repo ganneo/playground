@@ -1,9 +1,13 @@
 const calculateBtn = document.getElementById("calculate-btn");
+const loanAmountElement = document.getElementById("loan-amount");
+const repaymentYearsElement = document.getElementById("repayment-years");
+const annualInterestElement = document.getElementById("annual-interest");
+const clearValueBtn = document.getElementById("clear-btn");
 
 function calculateValue() {
   const loanAmount = document.getElementById("loan-amount").value;
-  const annualInterest = document.getElementById("annual-interest").value;
   const repaymentYears = document.getElementById("repayment-years").value;
+  const annualInterest = document.getElementById("annual-interest").value;
   const totalPayment =
     loanAmount * Math.pow(1 + annualInterest / 100, repaymentYears);
   const monthlyPayment = totalPayment / (repaymentYears * 12);
@@ -14,12 +18,11 @@ function calculateValue() {
   monthlyPaymentElement.value = monthlyPayment;
   totalPaymentElement.value = totalPayment;
   totalInterestElement.value = totalInterest;
-}
 
-calculateBtn.addEventListener("click", calculateValue);
-
-/* 
-const card = document.querySelector(".card");
+  if (
+    ((monthlyPayment === Infinity, totalPayment === 0), totalInterest === 0)
+  ) {
+    const card = document.querySelector(".card");
     //   make element
     const pElement = document.createElement("p");
     // add class and add text
@@ -40,4 +43,34 @@ const card = document.querySelector(".card");
     setTimeout(function () {
       pElement.remove();
     }, 3000);
-*/
+  } else {
+    const calculating = document.getElementById("calculating");
+    const calculated = document.getElementById("calculated");
+    calculating.style.display = "block";
+    calculated.style.display = "none";
+    setTimeout(function () {
+      calculating.style.display = "none";
+      calculated.style.display = "block";
+    }, 3000);
+  }
+}
+
+function calculateValueWithEnterKey(e) {
+  if (e.keyCode === 13) {
+    calculateBtn.click();
+  }
+}
+
+function clearValues() {
+  loanAmountElement.value = "";
+  annualInterestElement.value = "";
+  repaymentYearsElement.value = "";
+
+  document.getElementById("calculated").style.display = "none";
+}
+
+loanAmountElement.addEventListener("keyup", calculateValueWithEnterKey);
+annualInterestElement.addEventListener("keyup", calculateValueWithEnterKey);
+repaymentYearsElement.addEventListener("keyup", calculateValueWithEnterKey);
+calculateBtn.addEventListener("click", calculateValue);
+clearValueBtn.addEventListener("click", clearValues);
