@@ -15,9 +15,9 @@ function calculateValue() {
   const monthlyPaymentElement = document.getElementById("monthly-payment");
   const totalPaymentElement = document.getElementById("total-payment");
   const totalInterestElement = document.getElementById("total-interest");
-  monthlyPaymentElement.value = monthlyPayment;
-  totalPaymentElement.value = totalPayment;
-  totalInterestElement.value = totalInterest;
+  monthlyPaymentElement.value = monthlyPayment.toFixed(2);
+  totalPaymentElement.value = totalPayment.toFixed(2);
+  totalInterestElement.value = totalInterest.toFixed(2);
 
   if (
     ((monthlyPayment === Infinity, totalPayment === 0), totalInterest === 0)
