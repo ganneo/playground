@@ -11,7 +11,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background: url(./Img/blueBackground.jpg) no-repeat center center/cover;
+  background: url(./img/blueBackground.jpg) no-repeat center center/cover;
   min-height: 100vh;
   height: fit-content;
 }
