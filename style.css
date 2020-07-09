@@ -117,8 +117,8 @@ header {
 }
 /* iPad */
 @media (max-width: 768px) {
-  .not-ready {
-    padding: 3rem;
+  .container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 /* iPhone X */

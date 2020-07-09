@@ -1,13 +1,13 @@
 const calculateBtn = document.getElementById("calculate-btn");
 const loanAmountElement = document.getElementById("loan-amount");
-const repaymentYearsElement = document.getElementById("repayment-years");
 const annualInterestElement = document.getElementById("annual-interest");
+const repaymentYearsElement = document.getElementById("repayment-years");
 const clearValueBtn = document.getElementById("clear-btn");
 
 function calculateValue() {
   const loanAmount = document.getElementById("loan-amount").value;
-  const repaymentYears = document.getElementById("repayment-years").value;
   const annualInterest = document.getElementById("annual-interest").value;
+  const repaymentYears = document.getElementById("repayment-years").value;
   const totalPayment =
     loanAmount * Math.pow(1 + annualInterest / 100, repaymentYears);
   const monthlyPayment = totalPayment / (repaymentYears * 12);
@@ -19,26 +19,22 @@ function calculateValue() {
   totalPaymentElement.value = totalPayment.toFixed(2);
   totalInterestElement.value = totalInterest.toFixed(2);
 
-  if (
-    ((monthlyPayment === Infinity, totalPayment === 0), totalInterest === 0)
-  ) {
+  if (!isFinite(monthlyPayment) || totalPayment === 0 || totalInterest === 0) {
+    // make sure only one pElement
+    if (document.getElementById("error")) {
+      return;
+    }
     const card = document.querySelector(".card");
+    const heading = document.querySelector(".container .card h1");
     //   make element
     const pElement = document.createElement("p");
+    pElement.id = "error";
     // add class and add text
     pElement.className =
-      "text-danger progress-bar progress-bar-striped progress-bar-animated bg-warning m-auto p-2";
+      "text-danger progress-bar progress-bar-striped progress-bar-animated bg-warning mx-auto p-2";
     pElement.textContent = "Please check your numbers";
     // append child
-    card.insertBefore(pElement, card.firstChild);
-    // make sure only one pElement
-    if (
-      document.querySelectorAll(
-        "p.text-danger.progress-bar.progress-bar-striped.progress-bar-animated.bg-warning.m-auto.p-2"
-      ).length > 1
-    ) {
-      pElement.remove();
-    }
+    card.insertBefore(pElement, heading);
     // make time out
     setTimeout(function () {
       pElement.remove();
@@ -51,7 +47,7 @@ function calculateValue() {
     setTimeout(function () {
       calculating.style.display = "none";
       calculated.style.display = "block";
-    }, 3000);
+    }, 2000);
   }
 }
 
