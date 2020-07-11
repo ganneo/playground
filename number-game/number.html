@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton-framework/1.1.1/skeleton.min.css"
+      integrity="sha512-zzq8ZrbhP7DGbwClbqSYuo+di3FvAlMNykCKWE6pHuqmCgGjJSISDTzy7QkdI2ajLlgw0nx6hxIu8os2hYuN8w=="
+      crossorigin="anonymous"
+    />
+    <title>Ganneo | Guessing Game</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="game">
+        <h1>Number Guesser</h1>
+        <p>
+          Guess a number between <span class="min"></span> and
+          <span class="max"></span>
+        </p>
+        <p>You will have <span class="guesses-left"></span> guesses</p>
+        <input
+          type="number"
+          placeholder="Enter Your Guess..."
+          class="guess-input"
+        />
+        <button type="submit" id="submit-btn">SUBMIT</button>
+        <p class="msg"></p>
+      </div>
+    </div>
+
+    <script src="number.js"></script>
+  </body>
+</html>
