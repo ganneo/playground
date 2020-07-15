@@ -18,6 +18,7 @@ body {
 
 a {
   text-decoration: none;
+  text-align: center;
 }
 
 header {
@@ -121,47 +122,20 @@ header {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-/* iPhone X */
+
+/* iphone 6/7 */
 @media (max-width: 414px) {
   .container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
-  .container .not-ready:first-of-type {
-    padding: 1rem;
+  .not-ready {
+    display: none !important;
   }
-  .container .not-ready {
-    font-size: small;
-    text-align: center;
+
+  .not-ready:first-of-type {
+    display: block !important;
   }
 }
 
-/* iPhone 5/SE */
-@media (max-width: 320px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
-
-  .container a {
-    font-size: 0.7rem;
-    padding: 2rem;
-  }
-
-  .container .not-ready {
-    padding: 2rem;
-  }
-}
-
-/* galaxy S5 */
-@media (max-width: 360px) {
-  .container a {
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .container .not-ready {
-    padding: 2rem;
-  }
-}
+/*  */

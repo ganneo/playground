@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+      integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+      integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
+      crossorigin="anonymous"
+    />
+    <title>Ganneo | Book List</title>
+
+    <style>
+      .successful,
+      .unsuccessful,
+      .deleted {
+        padding: 10px;
+        margin: 5px 0 15px 0;
+        color: white;
+      }
+
+      .successful {
+        background-color: #00a86b;
+      }
+
+      .deleted {
+        background-color: #ff4500;
+      }
+
+      .unsuccessful {
+        background-color: red;
+      }
+
+      .fas {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Book List</h1>
+      <form id="book-form">
+        <label for="title">Book Title</label>
+        <input class="u-full-width" type="text" name="title" id="title" />
+        <label for="author">Author</label>
+        <input class="u-full-width" type="text" name="author" id="author" />
+        <label for="isbn">ISBN</label>
+        <input class="u-full-width" type="text" name="isbn" id="isbn" /> <br />
+        <button type="submit" class="button button-primary" id="btn-submit">
+          SUBMIT
+        </button>
+      </form>
+      <table class="u-full-width" id="table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody id="book-table"></tbody>
+      </table>
+    </div>
+
+    <script src="book2.js"></script>
+  </body>
+</html>
