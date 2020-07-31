@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+      integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+      crossorigin="anonymous"
+    />
+    <title>Ganneo | HTTP Library</title>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        padding: 1rem;
+        padding-left: 2rem;
+      }
+
+      .line {
+        height: 1px;
+        background-color: black;
+        margin-bottom: 3rem;
+        max-width: 50rem;
+      }
+
+      .made,
+      .postId,
+      .wrong {
+        padding: 2rem 3rem;
+        margin-bottom: 1rem;
+        max-width: 46rem;
+        display: none;
+      }
+
+      .made,
+      .postId {
+        border: 1px #00a86b solid;
+        color: #00a86b;
+      }
+
+      .wrong {
+        border: 1px red solid;
+        color: red;
+      }
+
+      .made p,
+      .wrong p {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Custom HTTP Library</h1>
+      <div class="made">
+        <p>Post Made! ₍₍◞( •௰• )◟₎₎⁽⁽◝( •௰• )◜⁾⁾</p>
+      </div>
+      <div class="wrong">
+        <p>Something Went Wrong (ノಠ益ಠ)ノ彡┻━┻</p>
+      </div>
+      <form>
+        <div>
+          <label for="post">Create A New Post</label>
+          <input type="text" id="post" placeholder="New Post" />
+        </div>
+        <button type="submit" class="button button-primary" id="submit-btn">
+          Submit Post
+        </button>
+      </form>
+      <div class="postId"></div>
+      <div class="line"></div>
+      <button type="submit" id="get-post-btn">Get Posts</button>
+      <ul id="posts"></ul>
+    </div>
+
+    <script src="easyhttp.js"></script>
+    <script src="http2.js"></script>
+  </body>
+</html>

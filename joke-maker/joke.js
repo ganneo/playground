@@ -5,10 +5,8 @@ function makeJokes(e) {
   }
 
   const ulElement = document.getElementById("jokes");
-  const ulArray = ulElement.childNodes;
-  ulArray.forEach((ele) => {
-    ele.remove();
-  });
+  const ulChildNodes = ulElement.childNodes;
+  Array.from(ulChildNodes).forEach((ele) => ele.remove());
 
   const xhr = new XMLHttpRequest();
   xhr.open("GET", `http://api.icndb.com/jokes/random/${number}`, true);
