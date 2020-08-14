@@ -1,4 +1,8 @@
 function addPosts(e) {
+  const ulElement = document.getElementById("posts");
+  ulElement.childNodes.forEach((ele) => {
+    ele.remove();
+  });
   e.preventDefault();
 
   const postValue = document.getElementById("post").value;

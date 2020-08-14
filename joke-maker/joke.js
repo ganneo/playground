@@ -9,7 +9,7 @@ function makeJokes(e) {
   Array.from(ulChildNodes).forEach((ele) => ele.remove());
 
   const xhr = new XMLHttpRequest();
-  xhr.open("GET", `http://api.icndb.com/jokes/random/${number}`, true);
+  xhr.open("GET", `https://api.icndb.com/jokes/random/${number}`, true);
   xhr.onload = () => {
     if (xhr.status !== 200) {
       console.log(xhr.status);

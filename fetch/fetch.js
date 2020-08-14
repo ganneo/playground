@@ -29,12 +29,12 @@ function fetchApi() {
   const ulChildNodes = ulElement.childNodes;
   Array.from(ulChildNodes).forEach((ele) => ele.remove());
 
-  fetch("https://jsonplaceholder.typicode.com/posts")
+  fetch("https://api.github.com/users")
     .then((response) => response.json())
     .then((responseJson) => {
       responseJson.forEach((ele) => {
         const liElement = document.createElement("LI");
-        liElement.textContent = ele.title;
+        liElement.textContent = ele.login;
         ulElement.appendChild(liElement);
       });
     });

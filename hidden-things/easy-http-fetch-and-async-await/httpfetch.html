@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+      integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+      crossorigin="anonymous"
+    />
+    <title>Ganneo | HTTP Library With Fetch</title>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        padding: 1rem;
+        padding-left: 2rem;
+      }
+
+      .line {
+        height: 1px;
+        background-color: black;
+        margin-bottom: 3rem;
+        max-width: 50rem;
+      }
+
+      .username-userid {
+        padding: 2rem 3rem;
+        margin-bottom: 1rem;
+        max-width: 46rem;
+      }
+
+      .username-userid {
+        border: 1px #00a86b solid;
+        color: #00a86b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Custom HTTP Library With Fetch</h1>
+      <form>
+        <div>
+          <label for="post">Create A New User</label>
+          <input type="text" id="user" placeholder="New User" />
+        </div>
+        <button type="submit" class="button button-primary" id="create-user">
+          Create User
+        </button>
+      </form>
+      <div class="line"></div>
+      <button type="submit" id="get-user-btn">Get Top Ten Users</button>
+      <ul id="users"></ul>
+    </div>
+
+    <script src="easyhttpasyncawait.js"></script>
+    <script src="easyhttpfetch.js"></script>
+    <script src="httpfetch.js"></script>
+  </body>
+</html>

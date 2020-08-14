@@ -116,6 +116,13 @@ header {
   color: white;
   background-color: rgb(87, 99, 191);
 }
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(101, 101, 101, 0.563);
+}
+
 /* iPad */
 @media (max-width: 768px) {
   .container {
@@ -137,5 +144,3 @@ header {
     display: block !important;
   }
 }
-
-/*  */

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <title>Ganneo | GitHub Finder</title>
+    <style>
+      .alert-danger,
+      .repos {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <h3 class="navbar-brand">GitHub</h3>
+    </nav>
+    <div class="container">
+      <p class="alert alert-danger mt-3">User not found</p>
+      <div class="card mt-3">
+        <div class="card-header"><h1>Search Github Users</h1></div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="username">
+              Enter a username to fetch a user's rofile, info, and repos</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              placeholder="Github username..."
+            />
+          </div>
+        </div>
+      </div>
+      <div class="card mt-3 repos">
+        <div class="card-header">Latest Repos</div>
+        <div class="card-body">
+          <ul class="list-group repo-ul"></ul>
+        </div>
+      </div>
+    </div>
+    <script src="Github.js"></script>
+    <script src="UI.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
