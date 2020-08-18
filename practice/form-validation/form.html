@@ -16,15 +16,24 @@
       crossorigin="anonymous"
     />
 
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+
     <title>Ganneo | Form Validation</title>
   </head>
   <body>
-    <div class="container mt-3">
-      <div class="card">
+    <div class="container">
+      <div class="card mt-3">
         <div class="card-header">
           <h1>User Form</h1>
         </div>
         <div class="card-body">
+          <h5 class="card-title">Please fill out the form</h5>
           <form>
             <div class="form-group">
               <label for="name">Name</label>
@@ -74,7 +83,9 @@
                 Enter a valid phone number.
               </div>
             </div>
-            <button class="btn btn-primary btn-block">Submit</button>
+            <button class="btn btn-primary btn-block" id="submit-btn">
+              Submit
+            </button>
           </form>
         </div>
       </div>

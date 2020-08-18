@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Natasha Coleman",
+    "age": 24,
+    "location": "California, Los Angeles",
+    "gender": "Female",
+    "preference": "Looking for Male",
+    "profileLink": "https://randomuser.me/api/portraits/women/21.jpg"
+  },
+  {
+    "name": "Ella Knight",
+    "age": 28,
+    "location": "California, San Diego",
+    "gender": "Female",
+    "preference": "Looking for Male",
+    "profileLink": "https://randomuser.me/api/portraits/women/27.jpg"
+  },
+  {
+    "name": "Luke Scott",
+    "age": 21,
+    "location": "California, Sacramento",
+    "gender": "Male",
+    "preference": "Looking for Female",
+    "profileLink": "https://randomuser.me/api/portraits/men/62.jpg"
+  }
+]

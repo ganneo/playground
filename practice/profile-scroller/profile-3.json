@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Ava Karli",
+    "age": 22,
+    "location": "California, Fresno",
+    "gender": "Female",
+    "preference": "Looking for Male",
+    "profileLink": "https://randomuser.me/api/portraits/women/11.jpg"
+  },
+  {
+    "name": "Jeff Scott",
+    "age": 23,
+    "location": "California, Sacramento",
+    "gender": "Male",
+    "preference": "Looking for Female",
+    "profileLink": "https://randomuser.me/api/portraits/men/11.jpg"
+  },
+  {
+    "name": "Tara Nikita",
+    "age": 27,
+    "location": "California, San Jose",
+    "gender": "Female",
+    "preference": "Looking for Male",
+    "profileLink": "https://randomuser.me/api/portraits/women/65.jpg"
+  },
+  {
+    "name": "Olivia Chen",
+    "age": 32,
+    "location": "California, Oakland",
+    "gender": "Female",
+    "preference": "Looking for Male",
+    "profileLink": "https://randomuser.me/api/portraits/women/85.jpg"
+  }
+]

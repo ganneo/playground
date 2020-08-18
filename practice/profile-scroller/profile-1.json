@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Liam Smith",
+    "age": 25,
+    "location": "California, Moutain View",
+    "gender": "Male",
+    "preference": "Looking for Female",
+    "profileLink": "https://randomuser.me/api/portraits/men/88.jpg"
+  },
+  {
+    "name": "Lexi Bell",
+    "age": 27,
+    "location": "California, San Francisco",
+    "gender": "Female",
+    "preference": "Looking for Male",
+    "profileLink": "https://randomuser.me/api/portraits/women/82.jpg"
+  },
+  {
+    "name": "Alex Zane",
+    "age": 30,
+    "location": "California, New York",
+    "gender": "Male",
+    "preference": "Looking for Female",
+    "profileLink": "https://randomuser.me/api/portraits/men/4.jpg"
+  }
+]
