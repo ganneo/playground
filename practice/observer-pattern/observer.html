@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ganneo | Observer Pattern</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+
+      .btn {
+        border: none;
+        padding: 0.5rem 1rem;
+        transition: all 0.5s ease;
+      }
+
+      .btn:hover {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn fire">FIRE</button>
+    <button class="btn sub-ms">Subscribe To Milliseconds</button>
+    <button class="btn unsub-ms">Unsubscribe To Milliseconds</button>
+    <button class="btn sub-sec">Subscribe To Seconds</button>
+    <button class="btn unsub-sec">Unsubscribe To Seconds</button>
+    <div class="data-ms"></div>
+    <div class="data-sec"></div>
+  </body>
+
+  <script src="app.js"></script>
+</html>
