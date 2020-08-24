@@ -34,6 +34,18 @@ const ms = {
   },
 };
 
+const sec = {
+  name: "sec subscriber",
+  fire: () => {
+    const currDate = new Date();
+    const pEle = `<p>Seconds: ${currDate.getSeconds()}</p>`;
+    dataSecEle.innerHTML = pEle;
+  },
+  clear: () => {
+    dataSecEle.innerHTML = "";
+  },
+};
+
 const msBtn = document.querySelector(".sub-ms");
 msBtn.addEventListener("click", () => {
   channel.register(ms);
@@ -42,6 +54,16 @@ msBtn.addEventListener("click", () => {
 const unsubMsBtn = document.querySelector(".unsub-ms");
 unsubMsBtn.addEventListener("click", () => {
   channel.deregister(ms);
+});
+
+const secBtn = document.querySelector(".sub-sec");
+secBtn.addEventListener("click", () => {
+  channel.register(sec);
+});
+
+const unsubSecBtn = document.querySelector(".unsub-sec");
+unsubSecBtn.addEventListener("click", () => {
+  channel.deregister(sec);
 });
 
 const fireBtn = document.querySelector(".fire");
