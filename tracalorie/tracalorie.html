@@ -24,11 +24,11 @@
         margin-top: 3rem;
       }
 
-      .brush {
+      .pointer {
         transition: all 0.5s ease-in-out;
       }
 
-      .brush:hover {
+      .pointer:hover {
         cursor: pointer;
         color: blue;
       }
@@ -42,7 +42,10 @@
           <a href="#" class="brand-logo center">Tracalorie</a>
           <ul class="right">
             <li>
-              <a href="#" class="btn waves-effect waves-light blue lighten-2"
+              <a
+                href="#"
+                class="btn waves-effect waves-light blue lighten-2"
+                id="clear-all"
                 >Clear All</a
               >
             </li>
@@ -108,7 +111,7 @@
         </div>
       </div>
       <h4 class="center-align">
-        Total Calories: <span id="tot-calories"></span>
+        Total Calories: <span id="tot-calories">0</span>
       </h4>
       <ul id="meal-list" class="collection"></ul>
     </div>
@@ -121,8 +124,9 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <script src="app.js"></script>
-    <script src="ItemCtrl.js"></script>
+    <script src="MealItem.js"></script>
     <script src="UICtrl.js"></script>
+    <script src="ItemCtrl.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

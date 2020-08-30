@@ -1,121 +1,71 @@
-// creating varables
-const addMealBtn = document.getElementById("add-meal-btn");
-const updateMealBtn = document.getElementById("update-meal-btn");
-const deleteMealBtn = document.getElementById("delete-meal-btn");
-const backBtn = document.getElementById("back-btn");
-const ulElement = document.getElementById("meal-list");
-const inputMeal = document.getElementById("meal");
-const inputCalories = document.getElementById("calories");
+let mealItemId;
 
-// ul ctrl class
-class UICtrl {
-  static hideUl() {
-    ulElement.style.display = "none";
-  }
+// Instantiate class
+const uiCtrl = new UICtrl(document);
+const mealItemCtrl = new MealItemCtrl();
 
-  static showUl() {
-    ulElement.style.display = "block";
-  }
+uiCtrl.setAddMealState();
 
-  static hideBtn(btnIdArray) {
-    btnIdArray.forEach((ele) => {
-      document.getElementById(ele).style.display = "none";
-    });
-  }
-
-  static showBtn(btnIdArray) {
-    btnIdArray.forEach((ele) => {
-      document.getElementById(ele).style.display = "inline";
-    });
-  }
-
-  static clearInput() {
-    inputMeal.value = "";
-    inputCalories.value = "";
-  }
-
-  static paintInput(mealCalorieObj) {
-    inputMeal.value = mealCalorieObj.meal;
-    inputCalories.value = mealCalorieObj.calorie;
-  }
-
-  static addItemToUl(liText) {
-    this.clearInput();
-    this.showUl();
-    const liElement = document.createElement("LI");
-    liElement.className = "collection-item";
-    liElement.innerHTML = `
-    ${liText}
-    <i class="material-icons secondary-content brush">brush</i>`;
-    ulElement.appendChild(liElement);
-  }
-}
-
-// states class
-class States {
-  static addMealState() {
-    UICtrl.hideBtn(["update-meal-btn", "delete-meal-btn", "back-btn"]);
-    UICtrl.showBtn(["add-meal-btn"]);
-  }
-
-  static changeMealState() {
-    UICtrl.showBtn(["update-meal-btn", "delete-meal-btn", "back-btn"]);
-    UICtrl.hideBtn(["add-meal-btn"]);
-  }
-}
-
-States.addMealState();
-
-// event listener for input meal btn
-inputMeal.addEventListener("keyup", () => {
-  if (inputMeal.value === " ") {
-    alert("Please don't start your meal with a space");
-    inputMeal.value = "";
-    return;
+// event listener
+document.addEventListener("keypress", (e) => {
+  if (e.keyCode === 13) {
+    e.preventDefault();
   }
 });
 
-let inputMealValue;
-let inputCalorieValue;
-
-// event listener for add meal btn
-addMealBtn.addEventListener("click", (e) => {
+uiCtrl.addMealBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  if (!inputMeal.value || !inputCalories.value || inputCalories.value < 0) {
+
+  if (!uiCtrl.isInputValid()) {
     return;
   }
 
-  inputMealValue = inputMeal.value;
-  inputCalorieValue = inputCalories.value;
-  UICtrl.addItemToUl(`${inputMeal.value}: ${inputCalories.value} calories`);
+  const mealItem = uiCtrl.createMealItem();
+  mealItemCtrl.addMealItem(mealItem);
+  uiCtrl.show(mealItemCtrl.getAllMealItems());
+  uiCtrl.clearInput();
 });
 
-// event listener for meal list
-ulElement.addEventListener("click", (e) => {
-  if (e.target.classList.contains("brush")) {
-    States.changeMealState();
-    console.log(e.target.parentNode.firstChild);
-
-    const mealCalorieObj = {
-      meal: inputMealValue,
-      calorie: inputCalorieValue,
-    };
-
-    UICtrl.paintInput(mealCalorieObj);
+uiCtrl.ulElement.addEventListener("click", (e) => {
+  if (!e.target.classList.contains("pointer")) {
+    return;
   }
+
+  mealItemId = parseInt(e.target.parentNode.id);
+  const mealItem = mealItemCtrl.getMealItem(mealItemId);
+  uiCtrl.setUpdateMealState();
+  uiCtrl.paintInput(mealItem);
 });
 
-// event listener for update meal btn
-updateMealBtn.addEventListener("click", (e) => {
+uiCtrl.updateMealBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  addMealBtn.click();
-  UICtrl.clearInput();
-  States.addMealState();
+
+  const mealItem = mealItemCtrl.getMealItem(mealItemId);
+  uiCtrl.updateMealItem(mealItem);
+  uiCtrl.show(mealItemCtrl.getAllMealItems());
+  uiCtrl.clearInput();
+  uiCtrl.setAddMealState();
 });
 
-// even listener for delete meal btn
-deleteMealBtn.addEventListener("click", (e) => {
+uiCtrl.deleteMealBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  UICtrl.clearInput();
-  States.addMealState();
+
+  mealItemCtrl.deleteMealItem(mealItemId);
+  uiCtrl.show(mealItemCtrl.getAllMealItems());
+  uiCtrl.clearInput();
+  uiCtrl.setAddMealState();
+});
+
+uiCtrl.backBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  uiCtrl.clearInput();
+  uiCtrl.setAddMealState();
+});
+
+uiCtrl.clearAllBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  mealItemCtrl.clearAllMealItems();
+  uiCtrl.show(mealItemCtrl.getAllMealItems());
 });
