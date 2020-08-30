@@ -32,6 +32,10 @@
         cursor: pointer;
         color: blue;
       }
+
+      .brand-logo {
+        margin-left: 1rem;
+      }
     </style>
   </head>
 
@@ -39,14 +43,14 @@
     <nav>
       <div class="nav-wrapper blue">
         <div class="container">
-          <a href="#" class="brand-logo center">Tracalorie</a>
+          <a href="#" class="brand-logo left">Calories</a>
           <ul class="right">
             <li>
               <a
                 href="#"
                 class="btn waves-effect waves-light blue lighten-2"
                 id="clear-all"
-                >Clear All</a
+                >Clear</a
               >
             </li>
           </ul>
@@ -63,14 +67,14 @@
               <div class="row">
                 <div class="col m6">
                   <div class="input-field">
-                    <input type="text" id="meal" />
                     <label for="meal">Meal</label>
+                    <input type="text" id="meal" />
                   </div>
                 </div>
                 <div class="col m6">
                   <div class="input-field">
-                    <input type="number" id="calories" />
                     <label for="calories">Calories</label>
+                    <input type="number" id="calories" />
                   </div>
                 </div>
               </div>

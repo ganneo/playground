@@ -1,12 +1,21 @@
 class MealItemCtrl {
   constructor() {
-    this.mealItems = [];
-    this.mealId = 0;
+    const mealItemsFromLocalStorage = localStorage.getItem("mealItems");
+    this.mealItems = mealItemsFromLocalStorage
+      ? JSON.parse(mealItemsFromLocalStorage)
+      : new Array();
+
+    this.mealId =
+      this.mealItems.reduce(
+        (maxId, mealItem) => Math.max(mealItem.id, maxId),
+        -1
+      ) + 1;
   }
 
   addMealItem(mealItem) {
     mealItem.setId(this.mealId++);
     this.mealItems.push(mealItem);
+    localStorage.setItem("mealItems", JSON.stringify(this.mealItems));
   }
 
   getMealItem(id) {
@@ -15,6 +24,7 @@ class MealItemCtrl {
 
   deleteMealItem(id) {
     this.mealItems = this.mealItems.filter((ele) => ele.id !== id);
+    localStorage.setItem("mealItems", JSON.stringify(this.mealItems));
   }
 
   getAllMealItems() {
@@ -23,5 +33,13 @@ class MealItemCtrl {
 
   clearAllMealItems() {
     this.mealItems = [];
+    localStorage.setItem("mealItems", JSON.stringify(this.mealItems));
+  }
+
+  updateMealItem(id, updatedMealItem) {
+    const mealItem = this.getMealItem(id);
+    mealItem.name = updatedMealItem.name;
+    mealItem.calories = updatedMealItem.calories;
+    localStorage.setItem("mealItems", JSON.stringify(this.mealItems));
   }
 }

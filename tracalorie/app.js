@@ -5,6 +5,7 @@ const uiCtrl = new UICtrl(document);
 const mealItemCtrl = new MealItemCtrl();
 
 uiCtrl.setAddMealState();
+uiCtrl.show(mealItemCtrl.getAllMealItems());
 
 // event listener
 document.addEventListener("keypress", (e) => {
@@ -40,8 +41,8 @@ uiCtrl.ulElement.addEventListener("click", (e) => {
 uiCtrl.updateMealBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  const mealItem = mealItemCtrl.getMealItem(mealItemId);
-  uiCtrl.updateMealItem(mealItem);
+  const updatedMealItem = uiCtrl.createMealItem();
+  mealItemCtrl.updateMealItem(mealItemId, updatedMealItem);
   uiCtrl.show(mealItemCtrl.getAllMealItems());
   uiCtrl.clearInput();
   uiCtrl.setAddMealState();

@@ -58,11 +58,8 @@ class UICtrl {
   paintInput(mealItem) {
     this.inputMeal.value = mealItem.name;
     this.inputCalories.value = mealItem.calories;
-  }
-
-  updateMealItem(mealItem) {
-    mealItem.name = this.inputMeal.value;
-    mealItem.calories = parseInt(this.inputCalories.value);
+    this.inputCalories.focus();
+    this.inputMeal.focus();
   }
 
   setAddMealState() {
