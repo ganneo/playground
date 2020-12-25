@@ -22,6 +22,7 @@ const preference = document.getElementById("preference");
 
 function showProfile() {
   generator.next().then((profileObj) => {
+    console.log(profileObj);
     profileImg.src = profileObj.value.profileLink;
     name.textContent = profileObj.value.name;
     age.textContent = profileObj.value.age;
